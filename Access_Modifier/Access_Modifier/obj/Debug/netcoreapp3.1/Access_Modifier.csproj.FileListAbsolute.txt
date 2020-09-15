@@ -1,0 +1,13 @@
+C:\Users\Dang Dinh Vuong\source\repos\Access_Modifier\Access_Modifier\bin\Debug\netcoreapp3.1\Access_Modifier.exe
+C:\Users\Dang Dinh Vuong\source\repos\Access_Modifier\Access_Modifier\bin\Debug\netcoreapp3.1\Access_Modifier.deps.json
+C:\Users\Dang Dinh Vuong\source\repos\Access_Modifier\Access_Modifier\bin\Debug\netcoreapp3.1\Access_Modifier.runtimeconfig.json
+C:\Users\Dang Dinh Vuong\source\repos\Access_Modifier\Access_Modifier\bin\Debug\netcoreapp3.1\Access_Modifier.runtimeconfig.dev.json
+C:\Users\Dang Dinh Vuong\source\repos\Access_Modifier\Access_Modifier\bin\Debug\netcoreapp3.1\Access_Modifier.dll
+C:\Users\Dang Dinh Vuong\source\repos\Access_Modifier\Access_Modifier\bin\Debug\netcoreapp3.1\Access_Modifier.pdb
+C:\Users\Dang Dinh Vuong\source\repos\Access_Modifier\Access_Modifier\obj\Debug\netcoreapp3.1\Access_Modifier.csprojAssemblyReference.cache
+C:\Users\Dang Dinh Vuong\source\repos\Access_Modifier\Access_Modifier\obj\Debug\netcoreapp3.1\Access_Modifier.AssemblyInfoInputs.cache
+C:\Users\Dang Dinh Vuong\source\repos\Access_Modifier\Access_Modifier\obj\Debug\netcoreapp3.1\Access_Modifier.AssemblyInfo.cs
+C:\Users\Dang Dinh Vuong\source\repos\Access_Modifier\Access_Modifier\obj\Debug\netcoreapp3.1\Access_Modifier.csproj.CoreCompileInputs.cache
+C:\Users\Dang Dinh Vuong\source\repos\Access_Modifier\Access_Modifier\obj\Debug\netcoreapp3.1\Access_Modifier.dll
+C:\Users\Dang Dinh Vuong\source\repos\Access_Modifier\Access_Modifier\obj\Debug\netcoreapp3.1\Access_Modifier.pdb
+C:\Users\Dang Dinh Vuong\source\repos\Access_Modifier\Access_Modifier\obj\Debug\netcoreapp3.1\Access_Modifier.genruntimeconfig.cache

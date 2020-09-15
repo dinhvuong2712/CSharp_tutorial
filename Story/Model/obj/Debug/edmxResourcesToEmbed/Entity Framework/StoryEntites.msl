@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="StoriesModelStoreContainer" CdmEntityContainer="StoriesEntities1">
+    <EntitySetMapping Name="Authors">
+      <EntityTypeMapping TypeName="StoriesModel.Author">
+        <MappingFragment StoreEntitySet="Author">
+          <ScalarProperty Name="authorsId" ColumnName="authorsId" />
+          <ScalarProperty Name="authorName" ColumnName="authorName" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BookMarks">
+      <EntityTypeMapping TypeName="StoriesModel.BookMark">
+        <MappingFragment StoreEntitySet="BookMark">
+          <ScalarProperty Name="bookMarkId" ColumnName="bookMarkId" />
+          <ScalarProperty Name="comicId" ColumnName="comicId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categories">
+      <EntityTypeMapping TypeName="StoriesModel.Category">
+        <MappingFragment StoreEntitySet="Category">
+          <ScalarProperty Name="categoriesId" ColumnName="categoriesId" />
+          <ScalarProperty Name="categoriesName" ColumnName="categoriesName" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChapterDirectories">
+      <EntityTypeMapping TypeName="StoriesModel.ChapterDirectory">
+        <MappingFragment StoreEntitySet="ChapterDirectory">
+          <ScalarProperty Name="chapterId" ColumnName="chapterId" />
+          <ScalarProperty Name="comicId" ColumnName="comicId" />
+          <ScalarProperty Name="pathBrowser" ColumnName="pathBrowser" />
+          <ScalarProperty Name="dateSubmitted" ColumnName="dateSubmitted" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ChapterImgs">
+      <EntityTypeMapping TypeName="StoriesModel.ChapterImg">
+        <MappingFragment StoreEntitySet="ChapterImg">
+          <ScalarProperty Name="imgId" ColumnName="imgId" />
+          <ScalarProperty Name="chapterId" ColumnName="chapterId" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comics">
+      <EntityTypeMapping TypeName="StoriesModel.Comic">
+        <MappingFragment StoreEntitySet="Comic">
+          <ScalarProperty Name="comicId" ColumnName="comicId" />
+          <ScalarProperty Name="title" ColumnName="title" />
+          <ScalarProperty Name="imageTitle" ColumnName="imageTitle" />
+          <ScalarProperty Name="description" ColumnName="description" />
+          <ScalarProperty Name="dateSubmitted" ColumnName="dateSubmitted" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+          <ScalarProperty Name="viewers" ColumnName="viewers" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comments">
+      <EntityTypeMapping TypeName="StoriesModel.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="commentsId" ColumnName="commentsId" />
+          <ScalarProperty Name="userId" ColumnName="userId" />
+          <ScalarProperty Name="content" ColumnName="content" />
+          <ScalarProperty Name="levelComment" ColumnName="levelComment" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Credentials">
+      <EntityTypeMapping TypeName="StoriesModel.Credential">
+        <MappingFragment StoreEntitySet="Credential">
+          <ScalarProperty Name="credentialId" ColumnName="credentialId" />
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+          <ScalarProperty Name="rolesId" ColumnName="rolesId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupStories">
+      <EntityTypeMapping TypeName="StoriesModel.GroupStory">
+        <MappingFragment StoreEntitySet="GroupStory">
+          <ScalarProperty Name="groupId" ColumnName="groupId" />
+          <ScalarProperty Name="groupName" ColumnName="groupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Roles">
+      <EntityTypeMapping TypeName="StoriesModel.Role">
+        <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="rolesId" ColumnName="rolesId" />
+          <ScalarProperty Name="rolesName" ColumnName="rolesName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="StatusStories">
+      <EntityTypeMapping TypeName="StoriesModel.StatusStory">
+        <MappingFragment StoreEntitySet="StatusStory">
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+          <ScalarProperty Name="title" ColumnName="title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="UserStories">
+      <EntityTypeMapping TypeName="StoriesModel.UserStory">
+        <MappingFragment StoreEntitySet="UserStory">
+          <ScalarProperty Name="usersId" ColumnName="usersId" />
+          <ScalarProperty Name="username" ColumnName="username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="avatar" ColumnName="avatar" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AuthorsDetails">
+      <EntityTypeMapping TypeName="StoriesModel.AuthorsDetail">
+        <MappingFragment StoreEntitySet="AuthorsDetail">
+          <ScalarProperty Name="comicId" ColumnName="comicId" />
+          <ScalarProperty Name="authorsId" ColumnName="authorsId" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CategoriesDetails">
+      <EntityTypeMapping TypeName="StoriesModel.CategoriesDetail">
+        <MappingFragment StoreEntitySet="CategoriesDetail">
+          <ScalarProperty Name="comicId" ColumnName="comicId" />
+          <ScalarProperty Name="categoriesId" ColumnName="categoriesId" />
+          <ScalarProperty Name="statusId" ColumnName="statusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

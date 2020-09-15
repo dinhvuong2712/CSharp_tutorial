@@ -1,0 +1,12 @@
+C:\Users\Dang Dinh Vuong\source\repos\Member_Class\Member_Class\obj\Debug\netcoreapp3.1\Member_Class.AssemblyInfoInputs.cache
+C:\Users\Dang Dinh Vuong\source\repos\Member_Class\Member_Class\obj\Debug\netcoreapp3.1\Member_Class.AssemblyInfo.cs
+C:\Users\Dang Dinh Vuong\source\repos\Member_Class\Member_Class\obj\Debug\netcoreapp3.1\Member_Class.csproj.CoreCompileInputs.cache
+C:\Users\Dang Dinh Vuong\source\repos\Member_Class\Member_Class\bin\Debug\netcoreapp3.1\Member_Class.exe
+C:\Users\Dang Dinh Vuong\source\repos\Member_Class\Member_Class\bin\Debug\netcoreapp3.1\Member_Class.deps.json
+C:\Users\Dang Dinh Vuong\source\repos\Member_Class\Member_Class\bin\Debug\netcoreapp3.1\Member_Class.runtimeconfig.json
+C:\Users\Dang Dinh Vuong\source\repos\Member_Class\Member_Class\bin\Debug\netcoreapp3.1\Member_Class.runtimeconfig.dev.json
+C:\Users\Dang Dinh Vuong\source\repos\Member_Class\Member_Class\bin\Debug\netcoreapp3.1\Member_Class.dll
+C:\Users\Dang Dinh Vuong\source\repos\Member_Class\Member_Class\bin\Debug\netcoreapp3.1\Member_Class.pdb
+C:\Users\Dang Dinh Vuong\source\repos\Member_Class\Member_Class\obj\Debug\netcoreapp3.1\Member_Class.dll
+C:\Users\Dang Dinh Vuong\source\repos\Member_Class\Member_Class\obj\Debug\netcoreapp3.1\Member_Class.pdb
+C:\Users\Dang Dinh Vuong\source\repos\Member_Class\Member_Class\obj\Debug\netcoreapp3.1\Member_Class.genruntimeconfig.cache

@@ -1,0 +1,13 @@
+C:\Users\Dang Dinh Vuong\source\repos\Method_Parametors\Method_Parametors\bin\Debug\netcoreapp3.1\Method_Parametors.exe
+C:\Users\Dang Dinh Vuong\source\repos\Method_Parametors\Method_Parametors\bin\Debug\netcoreapp3.1\Method_Parametors.deps.json
+C:\Users\Dang Dinh Vuong\source\repos\Method_Parametors\Method_Parametors\bin\Debug\netcoreapp3.1\Method_Parametors.runtimeconfig.json
+C:\Users\Dang Dinh Vuong\source\repos\Method_Parametors\Method_Parametors\bin\Debug\netcoreapp3.1\Method_Parametors.runtimeconfig.dev.json
+C:\Users\Dang Dinh Vuong\source\repos\Method_Parametors\Method_Parametors\bin\Debug\netcoreapp3.1\Method_Parametors.dll
+C:\Users\Dang Dinh Vuong\source\repos\Method_Parametors\Method_Parametors\bin\Debug\netcoreapp3.1\Method_Parametors.pdb
+C:\Users\Dang Dinh Vuong\source\repos\Method_Parametors\Method_Parametors\obj\Debug\netcoreapp3.1\Method_Parametors.csprojAssemblyReference.cache
+C:\Users\Dang Dinh Vuong\source\repos\Method_Parametors\Method_Parametors\obj\Debug\netcoreapp3.1\Method_Parametors.AssemblyInfoInputs.cache
+C:\Users\Dang Dinh Vuong\source\repos\Method_Parametors\Method_Parametors\obj\Debug\netcoreapp3.1\Method_Parametors.AssemblyInfo.cs
+C:\Users\Dang Dinh Vuong\source\repos\Method_Parametors\Method_Parametors\obj\Debug\netcoreapp3.1\Method_Parametors.csproj.CoreCompileInputs.cache
+C:\Users\Dang Dinh Vuong\source\repos\Method_Parametors\Method_Parametors\obj\Debug\netcoreapp3.1\Method_Parametors.dll
+C:\Users\Dang Dinh Vuong\source\repos\Method_Parametors\Method_Parametors\obj\Debug\netcoreapp3.1\Method_Parametors.pdb
+C:\Users\Dang Dinh Vuong\source\repos\Method_Parametors\Method_Parametors\obj\Debug\netcoreapp3.1\Method_Parametors.genruntimeconfig.cache

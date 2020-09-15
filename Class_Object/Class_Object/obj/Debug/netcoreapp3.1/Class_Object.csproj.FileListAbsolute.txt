@@ -1,0 +1,12 @@
+C:\Users\Dang Dinh Vuong\source\repos\Class_Object\Class_Object\bin\Debug\netcoreapp3.1\Class_Object.exe
+C:\Users\Dang Dinh Vuong\source\repos\Class_Object\Class_Object\bin\Debug\netcoreapp3.1\Class_Object.deps.json
+C:\Users\Dang Dinh Vuong\source\repos\Class_Object\Class_Object\bin\Debug\netcoreapp3.1\Class_Object.runtimeconfig.json
+C:\Users\Dang Dinh Vuong\source\repos\Class_Object\Class_Object\bin\Debug\netcoreapp3.1\Class_Object.runtimeconfig.dev.json
+C:\Users\Dang Dinh Vuong\source\repos\Class_Object\Class_Object\bin\Debug\netcoreapp3.1\Class_Object.dll
+C:\Users\Dang Dinh Vuong\source\repos\Class_Object\Class_Object\bin\Debug\netcoreapp3.1\Class_Object.pdb
+C:\Users\Dang Dinh Vuong\source\repos\Class_Object\Class_Object\obj\Debug\netcoreapp3.1\Class_Object.AssemblyInfoInputs.cache
+C:\Users\Dang Dinh Vuong\source\repos\Class_Object\Class_Object\obj\Debug\netcoreapp3.1\Class_Object.AssemblyInfo.cs
+C:\Users\Dang Dinh Vuong\source\repos\Class_Object\Class_Object\obj\Debug\netcoreapp3.1\Class_Object.csproj.CoreCompileInputs.cache
+C:\Users\Dang Dinh Vuong\source\repos\Class_Object\Class_Object\obj\Debug\netcoreapp3.1\Class_Object.dll
+C:\Users\Dang Dinh Vuong\source\repos\Class_Object\Class_Object\obj\Debug\netcoreapp3.1\Class_Object.pdb
+C:\Users\Dang Dinh Vuong\source\repos\Class_Object\Class_Object\obj\Debug\netcoreapp3.1\Class_Object.genruntimeconfig.cache

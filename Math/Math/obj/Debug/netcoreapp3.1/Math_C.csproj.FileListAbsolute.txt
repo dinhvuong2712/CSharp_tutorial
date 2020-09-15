@@ -1,0 +1,12 @@
+C:\Users\Dang Dinh Vuong\source\repos\Math\Math\bin\Debug\netcoreapp3.1\Math_C.exe
+C:\Users\Dang Dinh Vuong\source\repos\Math\Math\bin\Debug\netcoreapp3.1\Math_C.deps.json
+C:\Users\Dang Dinh Vuong\source\repos\Math\Math\bin\Debug\netcoreapp3.1\Math_C.runtimeconfig.json
+C:\Users\Dang Dinh Vuong\source\repos\Math\Math\bin\Debug\netcoreapp3.1\Math_C.runtimeconfig.dev.json
+C:\Users\Dang Dinh Vuong\source\repos\Math\Math\bin\Debug\netcoreapp3.1\Math_C.dll
+C:\Users\Dang Dinh Vuong\source\repos\Math\Math\bin\Debug\netcoreapp3.1\Math_C.pdb
+C:\Users\Dang Dinh Vuong\source\repos\Math\Math\obj\Debug\netcoreapp3.1\Math_C.AssemblyInfoInputs.cache
+C:\Users\Dang Dinh Vuong\source\repos\Math\Math\obj\Debug\netcoreapp3.1\Math_C.AssemblyInfo.cs
+C:\Users\Dang Dinh Vuong\source\repos\Math\Math\obj\Debug\netcoreapp3.1\Math_C.csproj.CoreCompileInputs.cache
+C:\Users\Dang Dinh Vuong\source\repos\Math\Math\obj\Debug\netcoreapp3.1\Math_C.dll
+C:\Users\Dang Dinh Vuong\source\repos\Math\Math\obj\Debug\netcoreapp3.1\Math_C.pdb
+C:\Users\Dang Dinh Vuong\source\repos\Math\Math\obj\Debug\netcoreapp3.1\Math_C.genruntimeconfig.cache

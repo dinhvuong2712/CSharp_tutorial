@@ -1,0 +1,12 @@
+C:\Users\Dang Dinh Vuong\source\repos\File\File\bin\Debug\netcoreapp3.1\File_IO.exe
+C:\Users\Dang Dinh Vuong\source\repos\File\File\bin\Debug\netcoreapp3.1\File_IO.deps.json
+C:\Users\Dang Dinh Vuong\source\repos\File\File\bin\Debug\netcoreapp3.1\File_IO.runtimeconfig.json
+C:\Users\Dang Dinh Vuong\source\repos\File\File\bin\Debug\netcoreapp3.1\File_IO.runtimeconfig.dev.json
+C:\Users\Dang Dinh Vuong\source\repos\File\File\bin\Debug\netcoreapp3.1\File_IO.dll
+C:\Users\Dang Dinh Vuong\source\repos\File\File\bin\Debug\netcoreapp3.1\File_IO.pdb
+C:\Users\Dang Dinh Vuong\source\repos\File\File\obj\Debug\netcoreapp3.1\File_IO.AssemblyInfoInputs.cache
+C:\Users\Dang Dinh Vuong\source\repos\File\File\obj\Debug\netcoreapp3.1\File_IO.AssemblyInfo.cs
+C:\Users\Dang Dinh Vuong\source\repos\File\File\obj\Debug\netcoreapp3.1\File_IO.csproj.CoreCompileInputs.cache
+C:\Users\Dang Dinh Vuong\source\repos\File\File\obj\Debug\netcoreapp3.1\File_IO.dll
+C:\Users\Dang Dinh Vuong\source\repos\File\File\obj\Debug\netcoreapp3.1\File_IO.pdb
+C:\Users\Dang Dinh Vuong\source\repos\File\File\obj\Debug\netcoreapp3.1\File_IO.genruntimeconfig.cache

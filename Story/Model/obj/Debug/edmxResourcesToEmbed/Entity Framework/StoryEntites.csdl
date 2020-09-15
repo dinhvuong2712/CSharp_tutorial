@@ -1,0 +1,464 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="StoriesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Author">
+    <Key>
+      <PropertyRef Name="authorsId" />
+    </Key>
+    <Property Name="authorsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="authorName" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="statusId" Type="Int32" />
+    <NavigationProperty Name="StatusStory" Relationship="Self.FK__Author__statusId__267ABA7A" FromRole="Author" ToRole="StatusStory" />
+    <NavigationProperty Name="AuthorsDetails" Relationship="Self.FK__AuthorsDe__autho__35BCFE0A" FromRole="Author" ToRole="AuthorsDetail" />
+  </EntityType>
+  <EntityType Name="BookMark">
+    <Key>
+      <PropertyRef Name="bookMarkId" />
+    </Key>
+    <Property Name="bookMarkId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="comicId" Type="Int32" Nullable="false" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Comic" Relationship="Self.FK__BookMark__comicI__403A8C7D" FromRole="BookMark" ToRole="Comic" />
+    <NavigationProperty Name="UserStory" Relationship="Self.FK__BookMark__userId__412EB0B6" FromRole="BookMark" ToRole="UserStory" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="categoriesId" />
+    </Key>
+    <Property Name="categoriesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="categoriesName" Type="String" MaxLength="300" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="statusId" Type="Int32" />
+    <NavigationProperty Name="CategoriesDetails" Relationship="Self.FK__Categorie__categ__398D8EEE" FromRole="Category" ToRole="CategoriesDetail" />
+    <NavigationProperty Name="StatusStory" Relationship="Self.FK__Category__status__29572725" FromRole="Category" ToRole="StatusStory" />
+  </EntityType>
+  <EntityType Name="ChapterDirectory">
+    <Key>
+      <PropertyRef Name="chapterId" />
+    </Key>
+    <Property Name="chapterId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="comicId" Type="Int32" Nullable="false" />
+    <Property Name="pathBrowser" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="dateSubmitted" Type="DateTime" Precision="3" />
+    <Property Name="statusId" Type="Int32" />
+    <NavigationProperty Name="Comic" Relationship="Self.FK__ChapterDi__comic__2F10007B" FromRole="ChapterDirectory" ToRole="Comic" />
+    <NavigationProperty Name="StatusStory" Relationship="Self.FK__ChapterDi__statu__300424B4" FromRole="ChapterDirectory" ToRole="StatusStory" />
+  </EntityType>
+  <EntityType Name="ChapterImg">
+    <Key>
+      <PropertyRef Name="imgId" />
+    </Key>
+    <Property Name="imgId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="chapterId" Type="Int32" Nullable="false" />
+    <Property Name="content" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="statusId" Type="Int32" />
+    <NavigationProperty Name="StatusStory" Relationship="Self.FK__ChapterIm__statu__32E0915F" FromRole="ChapterImg" ToRole="StatusStory" />
+  </EntityType>
+  <EntityType Name="Comic">
+    <Key>
+      <PropertyRef Name="comicId" />
+    </Key>
+    <Property Name="comicId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="imageTitle" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="description" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="dateSubmitted" Type="DateTime" Precision="3" />
+    <Property Name="statusId" Type="Int32" />
+    <Property Name="viewers" Type="Int64" />
+    <NavigationProperty Name="BookMarks" Relationship="Self.FK__BookMark__comicI__403A8C7D" FromRole="Comic" ToRole="BookMark" />
+    <NavigationProperty Name="ChapterDirectories" Relationship="Self.FK__ChapterDi__comic__2F10007B" FromRole="Comic" ToRole="ChapterDirectory" />
+    <NavigationProperty Name="AuthorsDetails" Relationship="Self.FK__AuthorsDe__comic__34C8D9D1" FromRole="Comic" ToRole="AuthorsDetail" />
+    <NavigationProperty Name="CategoriesDetails" Relationship="Self.FK__Categorie__comic__38996AB5" FromRole="Comic" ToRole="CategoriesDetail" />
+    <NavigationProperty Name="StatusStory" Relationship="Self.FK__Comic__statusId__2C3393D0" FromRole="Comic" ToRole="StatusStory" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="commentsId" />
+    </Key>
+    <Property Name="commentsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="userId" Type="Int32" Nullable="false" />
+    <Property Name="content" Type="String" MaxLength="500" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="levelComment" Type="Int32" />
+    <NavigationProperty Name="UserStory" Relationship="Self.FK__Comment__userId__440B1D61" FromRole="Comment" ToRole="UserStory" />
+  </EntityType>
+  <EntityType Name="Credential">
+    <Key>
+      <PropertyRef Name="credentialId" />
+    </Key>
+    <Property Name="credentialId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="groupId" Type="Int32" Nullable="false" />
+    <Property Name="rolesId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="GroupStory" Relationship="Self.FK__Credentia__group__4AB81AF0" FromRole="Credential" ToRole="GroupStory" />
+    <NavigationProperty Name="Role" Relationship="Self.FK__Credentia__roles__4BAC3F29" FromRole="Credential" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="GroupStory">
+    <Key>
+      <PropertyRef Name="groupId" />
+    </Key>
+    <Property Name="groupId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="groupName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Credentials" Relationship="Self.FK__Credentia__group__4AB81AF0" FromRole="GroupStory" ToRole="Credential" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="rolesId" />
+    </Key>
+    <Property Name="rolesId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="rolesName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Credentials" Relationship="Self.FK__Credentia__roles__4BAC3F29" FromRole="Role" ToRole="Credential" />
+  </EntityType>
+  <EntityType Name="StatusStory">
+    <Key>
+      <PropertyRef Name="statusId" />
+    </Key>
+    <Property Name="statusId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="title" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Authors" Relationship="Self.FK__Author__statusId__267ABA7A" FromRole="StatusStory" ToRole="Author" />
+    <NavigationProperty Name="Categories" Relationship="Self.FK__Category__status__29572725" FromRole="StatusStory" ToRole="Category" />
+    <NavigationProperty Name="ChapterDirectories" Relationship="Self.FK__ChapterDi__statu__300424B4" FromRole="StatusStory" ToRole="ChapterDirectory" />
+    <NavigationProperty Name="ChapterImgs" Relationship="Self.FK__ChapterIm__statu__32E0915F" FromRole="StatusStory" ToRole="ChapterImg" />
+    <NavigationProperty Name="Comics" Relationship="Self.FK__Comic__statusId__2C3393D0" FromRole="StatusStory" ToRole="Comic" />
+    <NavigationProperty Name="AuthorsDetails" Relationship="Self.FK__AuthorsDe__statu__36B12243" FromRole="StatusStory" ToRole="AuthorsDetail" />
+    <NavigationProperty Name="CategoriesDetails" Relationship="Self.FK__Categorie__statu__3A81B327" FromRole="StatusStory" ToRole="CategoriesDetail" />
+    <NavigationProperty Name="UserStories" Relationship="Self.FK__UserStory__statu__3D5E1FD2" FromRole="StatusStory" ToRole="UserStory" />
+  </EntityType>
+  <EntityType Name="UserStory">
+    <Key>
+      <PropertyRef Name="usersId" />
+    </Key>
+    <Property Name="usersId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="username" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="avatar" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="statusId" Type="Int32" />
+    <NavigationProperty Name="BookMarks" Relationship="Self.FK__BookMark__userId__412EB0B6" FromRole="UserStory" ToRole="BookMark" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK__Comment__userId__440B1D61" FromRole="UserStory" ToRole="Comment" />
+    <NavigationProperty Name="StatusStory" Relationship="Self.FK__UserStory__statu__3D5E1FD2" FromRole="UserStory" ToRole="StatusStory" />
+  </EntityType>
+  <EntityType Name="AuthorsDetail">
+    <Key>
+      <PropertyRef Name="comicId" />
+      <PropertyRef Name="authorsId" />
+    </Key>
+    <Property Name="comicId" Type="Int32" Nullable="false" />
+    <Property Name="authorsId" Type="Int32" Nullable="false" />
+    <Property Name="statusId" Type="Int32" />
+    <NavigationProperty Name="Author" Relationship="Self.FK__AuthorsDe__autho__35BCFE0A" FromRole="AuthorsDetail" ToRole="Author" />
+    <NavigationProperty Name="Comic" Relationship="Self.FK__AuthorsDe__comic__34C8D9D1" FromRole="AuthorsDetail" ToRole="Comic" />
+    <NavigationProperty Name="StatusStory" Relationship="Self.FK__AuthorsDe__statu__36B12243" FromRole="AuthorsDetail" ToRole="StatusStory" />
+  </EntityType>
+  <EntityType Name="CategoriesDetail">
+    <Key>
+      <PropertyRef Name="comicId" />
+      <PropertyRef Name="categoriesId" />
+    </Key>
+    <Property Name="comicId" Type="Int32" Nullable="false" />
+    <Property Name="categoriesId" Type="Int32" Nullable="false" />
+    <Property Name="statusId" Type="Int32" />
+    <NavigationProperty Name="Category" Relationship="Self.FK__Categorie__categ__398D8EEE" FromRole="CategoriesDetail" ToRole="Category" />
+    <NavigationProperty Name="Comic" Relationship="Self.FK__Categorie__comic__38996AB5" FromRole="CategoriesDetail" ToRole="Comic" />
+    <NavigationProperty Name="StatusStory" Relationship="Self.FK__Categorie__statu__3A81B327" FromRole="CategoriesDetail" ToRole="StatusStory" />
+  </EntityType>
+  <Association Name="FK__Author__statusId__267ABA7A">
+    <End Role="StatusStory" Type="Self.StatusStory" Multiplicity="0..1" />
+    <End Role="Author" Type="Self.Author" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusStory">
+        <PropertyRef Name="statusId" />
+      </Principal>
+      <Dependent Role="Author">
+        <PropertyRef Name="statusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AuthorsDe__autho__35BCFE0A">
+    <End Role="Author" Type="Self.Author" Multiplicity="1" />
+    <End Role="AuthorsDetail" Type="Self.AuthorsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Author">
+        <PropertyRef Name="authorsId" />
+      </Principal>
+      <Dependent Role="AuthorsDetail">
+        <PropertyRef Name="authorsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BookMark__comicI__403A8C7D">
+    <End Role="Comic" Type="Self.Comic" Multiplicity="1" />
+    <End Role="BookMark" Type="Self.BookMark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comic">
+        <PropertyRef Name="comicId" />
+      </Principal>
+      <Dependent Role="BookMark">
+        <PropertyRef Name="comicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__BookMark__userId__412EB0B6">
+    <End Role="UserStory" Type="Self.UserStory" Multiplicity="1" />
+    <End Role="BookMark" Type="Self.BookMark" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserStory">
+        <PropertyRef Name="usersId" />
+      </Principal>
+      <Dependent Role="BookMark">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Categorie__categ__398D8EEE">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="CategoriesDetail" Type="Self.CategoriesDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="categoriesId" />
+      </Principal>
+      <Dependent Role="CategoriesDetail">
+        <PropertyRef Name="categoriesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Category__status__29572725">
+    <End Role="StatusStory" Type="Self.StatusStory" Multiplicity="0..1" />
+    <End Role="Category" Type="Self.Category" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusStory">
+        <PropertyRef Name="statusId" />
+      </Principal>
+      <Dependent Role="Category">
+        <PropertyRef Name="statusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChapterDi__comic__2F10007B">
+    <End Role="Comic" Type="Self.Comic" Multiplicity="1" />
+    <End Role="ChapterDirectory" Type="Self.ChapterDirectory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comic">
+        <PropertyRef Name="comicId" />
+      </Principal>
+      <Dependent Role="ChapterDirectory">
+        <PropertyRef Name="comicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChapterDi__statu__300424B4">
+    <End Role="StatusStory" Type="Self.StatusStory" Multiplicity="0..1" />
+    <End Role="ChapterDirectory" Type="Self.ChapterDirectory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusStory">
+        <PropertyRef Name="statusId" />
+      </Principal>
+      <Dependent Role="ChapterDirectory">
+        <PropertyRef Name="statusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__ChapterIm__statu__32E0915F">
+    <End Role="StatusStory" Type="Self.StatusStory" Multiplicity="0..1" />
+    <End Role="ChapterImg" Type="Self.ChapterImg" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusStory">
+        <PropertyRef Name="statusId" />
+      </Principal>
+      <Dependent Role="ChapterImg">
+        <PropertyRef Name="statusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AuthorsDe__comic__34C8D9D1">
+    <End Role="Comic" Type="Self.Comic" Multiplicity="1" />
+    <End Role="AuthorsDetail" Type="Self.AuthorsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comic">
+        <PropertyRef Name="comicId" />
+      </Principal>
+      <Dependent Role="AuthorsDetail">
+        <PropertyRef Name="comicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Categorie__comic__38996AB5">
+    <End Role="Comic" Type="Self.Comic" Multiplicity="1" />
+    <End Role="CategoriesDetail" Type="Self.CategoriesDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Comic">
+        <PropertyRef Name="comicId" />
+      </Principal>
+      <Dependent Role="CategoriesDetail">
+        <PropertyRef Name="comicId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comic__statusId__2C3393D0">
+    <End Role="StatusStory" Type="Self.StatusStory" Multiplicity="0..1" />
+    <End Role="Comic" Type="Self.Comic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusStory">
+        <PropertyRef Name="statusId" />
+      </Principal>
+      <Dependent Role="Comic">
+        <PropertyRef Name="statusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__userId__440B1D61">
+    <End Role="UserStory" Type="Self.UserStory" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserStory">
+        <PropertyRef Name="usersId" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="userId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Credentia__group__4AB81AF0">
+    <End Role="GroupStory" Type="Self.GroupStory" Multiplicity="1" />
+    <End Role="Credential" Type="Self.Credential" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupStory">
+        <PropertyRef Name="groupId" />
+      </Principal>
+      <Dependent Role="Credential">
+        <PropertyRef Name="groupId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Credentia__roles__4BAC3F29">
+    <End Role="Role" Type="Self.Role" Multiplicity="1" />
+    <End Role="Credential" Type="Self.Credential" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="rolesId" />
+      </Principal>
+      <Dependent Role="Credential">
+        <PropertyRef Name="rolesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__AuthorsDe__statu__36B12243">
+    <End Role="StatusStory" Type="Self.StatusStory" Multiplicity="0..1" />
+    <End Role="AuthorsDetail" Type="Self.AuthorsDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusStory">
+        <PropertyRef Name="statusId" />
+      </Principal>
+      <Dependent Role="AuthorsDetail">
+        <PropertyRef Name="statusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Categorie__statu__3A81B327">
+    <End Role="StatusStory" Type="Self.StatusStory" Multiplicity="0..1" />
+    <End Role="CategoriesDetail" Type="Self.CategoriesDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusStory">
+        <PropertyRef Name="statusId" />
+      </Principal>
+      <Dependent Role="CategoriesDetail">
+        <PropertyRef Name="statusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__UserStory__statu__3D5E1FD2">
+    <End Role="StatusStory" Type="Self.StatusStory" Multiplicity="0..1" />
+    <End Role="UserStory" Type="Self.UserStory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="StatusStory">
+        <PropertyRef Name="statusId" />
+      </Principal>
+      <Dependent Role="UserStory">
+        <PropertyRef Name="statusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="StoriesEntities1" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Authors" EntityType="Self.Author" />
+    <EntitySet Name="BookMarks" EntityType="Self.BookMark" />
+    <EntitySet Name="Categories" EntityType="Self.Category" />
+    <EntitySet Name="ChapterDirectories" EntityType="Self.ChapterDirectory" />
+    <EntitySet Name="ChapterImgs" EntityType="Self.ChapterImg" />
+    <EntitySet Name="Comics" EntityType="Self.Comic" />
+    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="Credentials" EntityType="Self.Credential" />
+    <EntitySet Name="GroupStories" EntityType="Self.GroupStory" />
+    <EntitySet Name="Roles" EntityType="Self.Role" />
+    <EntitySet Name="StatusStories" EntityType="Self.StatusStory" />
+    <EntitySet Name="UserStories" EntityType="Self.UserStory" />
+    <EntitySet Name="AuthorsDetails" EntityType="Self.AuthorsDetail" />
+    <EntitySet Name="CategoriesDetails" EntityType="Self.CategoriesDetail" />
+    <AssociationSet Name="FK__Author__statusId__267ABA7A" Association="Self.FK__Author__statusId__267ABA7A">
+      <End Role="StatusStory" EntitySet="StatusStories" />
+      <End Role="Author" EntitySet="Authors" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AuthorsDe__autho__35BCFE0A" Association="Self.FK__AuthorsDe__autho__35BCFE0A">
+      <End Role="Author" EntitySet="Authors" />
+      <End Role="AuthorsDetail" EntitySet="AuthorsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BookMark__comicI__403A8C7D" Association="Self.FK__BookMark__comicI__403A8C7D">
+      <End Role="Comic" EntitySet="Comics" />
+      <End Role="BookMark" EntitySet="BookMarks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__BookMark__userId__412EB0B6" Association="Self.FK__BookMark__userId__412EB0B6">
+      <End Role="UserStory" EntitySet="UserStories" />
+      <End Role="BookMark" EntitySet="BookMarks" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Categorie__categ__398D8EEE" Association="Self.FK__Categorie__categ__398D8EEE">
+      <End Role="Category" EntitySet="Categories" />
+      <End Role="CategoriesDetail" EntitySet="CategoriesDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Category__status__29572725" Association="Self.FK__Category__status__29572725">
+      <End Role="StatusStory" EntitySet="StatusStories" />
+      <End Role="Category" EntitySet="Categories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChapterDi__comic__2F10007B" Association="Self.FK__ChapterDi__comic__2F10007B">
+      <End Role="Comic" EntitySet="Comics" />
+      <End Role="ChapterDirectory" EntitySet="ChapterDirectories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChapterDi__statu__300424B4" Association="Self.FK__ChapterDi__statu__300424B4">
+      <End Role="StatusStory" EntitySet="StatusStories" />
+      <End Role="ChapterDirectory" EntitySet="ChapterDirectories" />
+    </AssociationSet>
+    <AssociationSet Name="FK__ChapterIm__statu__32E0915F" Association="Self.FK__ChapterIm__statu__32E0915F">
+      <End Role="StatusStory" EntitySet="StatusStories" />
+      <End Role="ChapterImg" EntitySet="ChapterImgs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AuthorsDe__comic__34C8D9D1" Association="Self.FK__AuthorsDe__comic__34C8D9D1">
+      <End Role="Comic" EntitySet="Comics" />
+      <End Role="AuthorsDetail" EntitySet="AuthorsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Categorie__comic__38996AB5" Association="Self.FK__Categorie__comic__38996AB5">
+      <End Role="Comic" EntitySet="Comics" />
+      <End Role="CategoriesDetail" EntitySet="CategoriesDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comic__statusId__2C3393D0" Association="Self.FK__Comic__statusId__2C3393D0">
+      <End Role="StatusStory" EntitySet="StatusStories" />
+      <End Role="Comic" EntitySet="Comics" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__userId__440B1D61" Association="Self.FK__Comment__userId__440B1D61">
+      <End Role="UserStory" EntitySet="UserStories" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Credentia__group__4AB81AF0" Association="Self.FK__Credentia__group__4AB81AF0">
+      <End Role="GroupStory" EntitySet="GroupStories" />
+      <End Role="Credential" EntitySet="Credentials" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Credentia__roles__4BAC3F29" Association="Self.FK__Credentia__roles__4BAC3F29">
+      <End Role="Role" EntitySet="Roles" />
+      <End Role="Credential" EntitySet="Credentials" />
+    </AssociationSet>
+    <AssociationSet Name="FK__AuthorsDe__statu__36B12243" Association="Self.FK__AuthorsDe__statu__36B12243">
+      <End Role="StatusStory" EntitySet="StatusStories" />
+      <End Role="AuthorsDetail" EntitySet="AuthorsDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Categorie__statu__3A81B327" Association="Self.FK__Categorie__statu__3A81B327">
+      <End Role="StatusStory" EntitySet="StatusStories" />
+      <End Role="CategoriesDetail" EntitySet="CategoriesDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK__UserStory__statu__3D5E1FD2" Association="Self.FK__UserStory__statu__3D5E1FD2">
+      <End Role="StatusStory" EntitySet="StatusStories" />
+      <End Role="UserStory" EntitySet="UserStories" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

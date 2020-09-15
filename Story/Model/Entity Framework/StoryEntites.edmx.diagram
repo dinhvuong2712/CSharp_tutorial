@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="71521a6afffd451f827121dbd14339b4" Name="Diagram1">
+        <EntityTypeShape EntityType="StoriesModel.Author" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoriesModel.BookMark" Width="1.5" PointX="5.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoriesModel.Category" Width="1.5" PointX="3" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoriesModel.ChapterDirectory" Width="1.5" PointX="8.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoriesModel.ChapterImg" Width="1.5" PointX="3" PointY="12.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoriesModel.Comic" Width="1.5" PointX="3" PointY="14.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoriesModel.Comment" Width="1.5" PointX="5.25" PointY="19.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoriesModel.Credential" Width="1.5" PointX="8" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoriesModel.GroupStory" Width="1.5" PointX="5.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoriesModel.Role" Width="1.5" PointX="5.75" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoriesModel.StatusStory" Width="1.5" PointX="0.75" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoriesModel.UserStory" Width="1.5" PointX="3" PointY="18.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoriesModel.AuthorsDetail" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="StoriesModel.CategoriesDetail" Width="1.5" PointX="5.25" PointY="13.125" IsExpanded="true" />
+        <AssociationConnector Association="StoriesModel.FK__Author__statusId__267ABA7A" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__AuthorsDe__autho__35BCFE0A" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__BookMark__comicI__403A8C7D" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__BookMark__userId__412EB0B6" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__Categorie__categ__398D8EEE" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__Category__status__29572725" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__ChapterDi__comic__2F10007B" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__ChapterDi__statu__300424B4" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__ChapterIm__statu__32E0915F" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__AuthorsDe__comic__34C8D9D1" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__Categorie__comic__38996AB5" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__Comic__statusId__2C3393D0" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__Comment__userId__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__Credentia__group__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__Credentia__roles__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__AuthorsDe__statu__36B12243" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__Categorie__statu__3A81B327" ManuallyRouted="false" />
+        <AssociationConnector Association="StoriesModel.FK__UserStory__statu__3D5E1FD2" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

@@ -1,0 +1,154 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/AdminStory/Views/Shared/_Layout_Control.cshtml";
+    var list = (List<Model.Entity_Framework.Comic>)ViewBag.ListPage;
+    var currentPage = ViewBag.CurrentPage;
+    var pageSize = ViewBag.PageSize;
+    var totalRow = ViewBag.TotalPage;
+}
+<!-- Page Heading -->
+<h1 class="h3 mb-2 text-gray-800">Tables</h1>
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped table-hover" id="dataTable" width="100%" cellspacing="0">
+                <thead style="background-color:#4e73df;">
+                    <tr class="text-light">
+                        <th>STT</th>
+                        <th>Tên truyện</th>
+                        <th>Trạng thái</th>
+                        @*<th>Xếp hạng</th>*@
+                        <th class="text-center">Thao tác</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in list)
+                    {
+                        <tr class="position-relative">
+                            <th class="text-center">
+                                @item.comicId
+                                <br />
+                                <i class='fas fa-plus-circle text-primary btn-detail-@item.comicId' style='font-size:24px;cursor:pointer' id="@item.comicId" onclick="btn_detail(this.id)"></i>
+                            </th>
+                            <th>
+                                @if(!@item.title.IsEmpty()){
+                                    <text>Null</text>
+                                }else{
+                                    @item.title
+                                }
+                            </th>
+                            <td>
+                                @item.StatusStory.title
+                            </td>
+                            <td class="w-auto">
+                                <p class="d-flex justify-content-center">
+                                    <a class="nav-link pt-0 pl-2 pr-2" href="~/Admin/ComicAdmin/Update?id=@item.comicId">Sửa</a>
+                                    <a class="nav-link pt-0 pl-2 pr-2" href="#">Đổi trạng thái</a>
+                                    <a class="nav-link pt-0 pl-2 pr-2 mt-0 text-danger" href="#" id="@item.comicId" onclick="Id(this.id)">Xóa</a>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr class="detailComic-@item.comicId" style="display:none;">
+                            <td colspan="5">
+                                <div class="w-100 d-flex">
+                                    <div class="pr-2 w-25">
+                                        <img src="~/Image/comic/@item.imageTitle" class="img-fluid" style="width:300px;height:400px;object-fit:cover;" alt="Alternate Text" />
+                                    </div>
+                                    <div class="pl-3 w-75">
+                                        <p class="mb-3"><strong>Tên tác giả: </strong> @foreach (var itemAuthor in item.AuthorsDetails)
+                                        {<text>@itemAuthor.Author.authorName</text>}</p>
+                                        <p class="mb-3"><strong>Ngày phát hành: </strong> @item.dateSubmitted.Value.ToString("dd-MM-yyyy (hh:mm)")</p>
+                                        <p class="d-flex mb-3">
+                                            <strong class="pr-3">Thể loại: </strong> @foreach (var itemCategory in item.CategoriesDetails)
+                                            {
+ @*Hoàn thiện sau*@                                               <a href="" class="btn btn-outline-secondary rounded-pill pt-0 pb-0 pl-1 pr-1 mr-2">@itemCategory.Category.categoriesName</a>
+                                            }
+                                        </p>
+                                        <div class="d-flex mb-3">
+                                            <strong class="pr-2">Trạng thái: </strong>
+                                            <p class="">@item.StatusStory.title</p>
+                                        </div>
+                                        <p class="d-flex mb-2"><strong class="pr-2">Lượt người xem: </strong> @item.viewers <i class="fas fa-eye pt-1 pl-2"></i></p>
+                                        <p class="navbar pl-0 pt-2 pb-2 mb-2 justify-content-start">
+                                            <strong class="mr-3">Đánh giá: </strong>
+                                            <i class='fas fa-star' style='margin-right:5px;font-size:18px;cursor:pointer;color: #ffd900;'></i>
+                                            <i class='fas fa-star' style='margin-right:5px;font-size:18px;cursor:pointer;color: #ffd900;'></i>
+                                            <i class='fas fa-star' style='margin-right:5px;font-size:18px;cursor:pointer;color: #ffd900;'></i>
+                                            <i class='fas fa-star' style='margin-right:5px;font-size:18px;cursor:pointer;color: #ffd900;'></i>
+                                            <i class='far fa-star' style='margin-right:5px;font-size:18px;cursor:pointer;'></i>
+                                        </p>
+                                        <p class="d-flex mb-2"><strong class="pr-2">Số trang: </strong> @item.ChapterDirectories.Count() <a href="Admin/ChapterAdmin/">content</a></p>
+                                        <strong>Tóm tắt nội dung: </strong>
+                                        <div class="form-control bg-light" style="width:100%;height:100px;">@item.description</div>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="d-flex justify-content-between align-items-center">
+            <div class="d-flex align-items-center">
+                <div class="mr-4">
+                    <a href="~/Admin/ComicAdmin/AddComic" class="btn btn-outline-primary">Thêm truyện</a>
+                </div>
+                @if (totalRow > 1)
+                {
+                    <h4 class="text-secondary">
+                        Hiển thị 5 mục mỗi trang trên tổng @totalRow trang
+                    </h4>
+                }
+                else
+                {
+                    <h4 class="text-secondary">
+                        Chỉ có @totalRow trang
+                    </h4>
+                }
+            </div>
+            <div class="d-flex align-items-center">
+                <div class="dataTables_paginate paging_simple_numbers pb-0">
+                    <ul class="pagination d-flex align-items-center mb-0">
+                        @if (currentPage > 1)
+                        {
+                            var changePage = currentPage - 1;
+                            <li class="paginate_button page-item previous active">
+                                <a href="/Admin/ComicAdmin/Index?currentpage=@changePage" asp-controller="ComicAdmin" asp-action="Index" asp-route-currentpage="@changePage" class="page-link">Previous</a>
+                            </li>
+                        }
+                        @for (var i = 0; i < totalRow; i++)
+                        {
+                            var page = i + 1;
+                            if (page != currentPage)
+                            {
+                                <li class="paginate_button page-item">
+                                    <a href="/Admin/ComicAdmin/Index?currentpage=@page" asp-controller="ComicAdmin" asp-action="Index" asp-route-currentpage="@page" class="page-link">@page</a>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="paginate_button page-item active">
+                                    <a href="~/Admin/ComicAdmin/Index?currentpage=@currentPage" asp-controller="ComicAdmin" asp-action="Index" asp-route-currentpage="@currentPage" class="page-link">@currentPage</a>
+                                </li>
+                            }
+                        }
+                        @if (currentPage < totalRow)
+                        {
+                            var changePage = currentPage + 1;
+                            <li class="paginate_button page-item next active">
+                                <a href="/Admin/ComicAdmin/Index?currentpage=@changePage" asp-controller="ComicAdmin" asp-action="Index" asp-route-currentpage="@changePage" class="page-link">Next</a>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- /.container-fluid -->
