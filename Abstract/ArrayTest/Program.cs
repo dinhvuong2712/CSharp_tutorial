@@ -1,4 +1,5 @@
-﻿using StringTest;
+﻿using ArrayTest;
+using StringTest;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -13,92 +14,92 @@ namespace StringTest
             string[] b = { "a", "b" };
             string[] d = { "x", "1" };
 
-            string[][] c = GhepPhanTu(a, b);
-            foreach(var items in a)
-            {
-                Console.WriteLine(items.ToString());
-            }
-
+            string[][] arr = new string[3][] { a, b, d };
             //Bai1
+            string[][] c = GhepPhanTu(a, b);
             for(int i = 0; i< c.Length; i++)
             {
-                for (int j = 0; j < 2; j++)
+                for(int j = 0; j< b.Length; j++)
                 {
-                    Console.Write(c[i][j].ToString());
+                    Console.Write(c[i][j]);
                 }
             }
             Console.WriteLine();
             //Bai2
             string[][] e = GhepPhanTu(c, d);
-            for(int i = 0; i< e.Length; i++)
+            for (int i = 0; i < e.Length; i++)
             {
-                for(int j = 0; j < a.Length; j++)
+                for (int j = 0; j < 3; j++)
                 {
-                    Console.Write(e[i][j].ToString()) ;
+                    Console.Write(e[i][j]);
                 }
             }
             Console.WriteLine();
-            //Bai3
-            string[][] advancedArr = GhepPhanTuNangCao(a,b,d);
-            for(int i=0; i<advancedArr.Length; i++)
+        }
+        public static string[][] GhepPhanTu(string[] a, string[] b)
+        {
+            // đầu vào là 2 mảng 1 chiều
+            //vd:
+            //a = ["a1","a2"]
+            //b = ["b1","b2"]
+            //return [ ["a1","b1"],["a1","b2"], ["a2","b1"], ["a2","b2"] ]
+            int resultLenght = a.Length * b.Length;
+            string[][] result = new string[resultLenght][];
+            int resultIndex = 0;
+            for (int i = 0; i < a.Length; i++)
             {
-                for(int j = 0; j < a.Length; j++)
+                for (int j = 0; j < b.Length; j++)
                 {
-                    Console.Write(advancedArr[i][j].ToString());
+                    result[resultIndex] = new string[] { a[i], b[j] };
+                    resultIndex++;
                 }
             }
-            
+            return result;
         }
-
-        static string[][] GhepPhanTu(string[] a, string[] b)
+        public static string[][] GhepPhanTu(string[][] c, string[] d)
         {
-            int index = -1;
-            string[][] c = new string[a.Length*b.Length][];
-            for (int j = 0; j < a.Length; j++)
+            int resultIndex = 0;
+            string[][] result = new string[c.Length * d.Length][];
+            string[] tam = new string[2];
+            for (int i = 0; i < c.Length; i++)
             {
-                for (int k = 0; k < b.Length; k++)
+                for (int j = 0; j < 2; j++)
                 {
-                    index++;
-                    c[index] = new string[] { a[j], b[k] };
-                }
-            }
-            return c;
-        }
-        
-        static string[][] GhepPhanTu(string[][]c, string[] d)
-        {
-            int index = -1;
-            string[][] e = new string[c.Length * d.Length][];
-            for(int i = 0; i < c.Length; i++)
-            {
-                for(int j = 0; j < d.Length; j++)
-                {
-                    int k = 0;
-                    index++;
-                    e[index] = new string[] { c[i][k], c[i][k+1], d[j]};
-                }
-            }
-
-            return e;
-        }
-        static string[][] GhepPhanTuNangCao(string[]a, string[]b, string[]d)
-        {
-            int lenghtArr = a.Length * b.Length * d.Length;
-            int indexArr = -1;
-            string[][] arr = new string[lenghtArr][];
-            for(int i = 0; i < a.Length; i++)
-            {
-                for(int j = 0; j < b.Length; j++)
-                {
-                    for(int k = 0; k < d.Length; k++)
+                    if (j > 0)
                     {
-                        indexArr++;
-                        string[] arrItems = new string[] { a[i], b[j], d[k] };
-                        arr[indexArr] = arrItems;
+                        tam[1] = c[i][j];
+                        for (int k = 0; k < 2; k++)
+                        {
+                            result[resultIndex] = new string[] { tam[0], tam[1], d[k] };
+                            resultIndex++;
+                        }
+                        tam = new string[2];
+                    }
+                    else
+                    {
+                        tam[0] = c[i][j];
                     }
                 }
             }
-            return arr;
+            return result;
         }
+        /*public static string[][] GhepPhanTuNangCao(params string[][] args)
+        {
+            // đầu vào là 1 mảng, trong mỗi phần tử là 1 mảng 1 chiều
+            //vd: args=[ ["1","2"], ["a","b"], ["x","y","z"] ];
+            //return [[ "1", "a","x" ], [ "1", "a","y" ] , [ "1", "a","z" ] , ... , , [ "2", "b","z" ]]
+
+            for (int i = 0; i < args.Length; i++)
+            {
+                for (int j = 0; j < args.Length; j++)
+                {
+                    if(args[i][j] != 0)
+                    {
+
+                    }
+                }
+            }
+            string[][] result = new string[][];
+        }*/
     }
 }

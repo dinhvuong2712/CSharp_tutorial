@@ -6,11 +6,11 @@ namespace StringTest
 {
     class AdvancedArray
     {
-        public List<ClaE> classE;
+        /*public List<ClaE> classE;
 
         public AdvancedArray(List<ClaE> classE)
         {
             this.classE = classE;
-        }
+        }*/
     }
 }
