@@ -6,7 +6,7 @@ namespace StringTest
     {
         static void Main(string[] args)
         {
-            //Bai 1
+            /*//Bai 1
             Version ver1 = new Version();
             ver1.NumberOfVersion = 1;
             string currentVer1 = ver1.ToString();
@@ -35,10 +35,17 @@ namespace StringTest
             Version ver4 = new Version();
             ver4.NumberOfVersion = 1000;
             arrVersion = new Version[] { ver1, ver2, ver3, ver4 };
-            Console.WriteLine(ThayDoiVersion(arrVersion));
+            Console.WriteLine(ThayDoiVersion(arrVersion));*/
 
+
+            //TestVersion
+
+            TestVersion testVersion1 = new TestVersion();
+            testVersion1.NumberOfVersion = 1011;
+            Console.WriteLine(testVersion1.ToString());
         }
-        static string ThayDoiVersion(Version[] arrayVersion)
+
+        /*static string ThayDoiVersion(Version[] arrayVersion)
         {
             string arrayResult = "";
             for (int i = 0; i < arrayVersion.Length; i++)
@@ -130,6 +137,6 @@ namespace StringTest
                     //có thể cho thêm
             }
             return result;
-        }
+        }*/
     }
 }
