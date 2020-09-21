@@ -14,20 +14,21 @@ namespace StringTest
             string[] b = { "a", "b" };
             string[] d = { "x", "1" };
 
-            string[][] arr = new string[3][] { a, b, d };
+            string[][] arr = new string[][] { a, b, d };
             //Bai1
             string[][] c = GhepPhanTu(a, b);
-            for(int i = 0; i< c.Length; i++)
+            for(int i = 0; i< c.GetLength(0); i++)
             {
-                for(int j = 0; j< b.Length; j++)
+                for(int j = 0; j< 2; j++)
                 {
                     Console.Write(c[i][j]);
                 }
             }
             Console.WriteLine();
+            
             //Bai2
             string[][] e = GhepPhanTu(c, d);
-            for (int i = 0; i < e.Length; i++)
+            for (int i = 0; i < e.GetLength(0); i++)
             {
                 for (int j = 0; j < 3; j++)
                 {
@@ -35,6 +36,16 @@ namespace StringTest
                 }
             }
             Console.WriteLine();
+
+            //Bai3
+            string[][] arrays = GhepPhanTuNangCao(arr);
+            for (int i = 0; i < arrays.GetLength(0); i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Console.Write(arrays[i][j]);
+                }
+            }
         }
         public static string[][] GhepPhanTu(string[] a, string[] b)
         {
@@ -58,48 +69,53 @@ namespace StringTest
         }
         public static string[][] GhepPhanTu(string[][] c, string[] d)
         {
-            int resultIndex = 0;
             string[][] result = new string[c.Length * d.Length][];
-            string[] tam = new string[2];
-            for (int i = 0; i < c.Length; i++)
+            int resultIndex = 0;
+            for(int i=0; i<c.GetLength(0); i++)
             {
-                for (int j = 0; j < 2; j++)
+                for(int j=0; j<2; j++)
                 {
-                    if (j > 0)
+                    if (j == 1)
                     {
-                        tam[1] = c[i][j];
-                        for (int k = 0; k < 2; k++)
+                        for (int k = 0; k < d.Length; k++)
                         {
-                            result[resultIndex] = new string[] { tam[0], tam[1], d[k] };
+                            result[resultIndex] = new string[]{c[i][j-1],c[i][j],d[k]};
                             resultIndex++;
                         }
-                        tam = new string[2];
-                    }
-                    else
-                    {
-                        tam[0] = c[i][j];
                     }
                 }
             }
             return result;
         }
-        /*public static string[][] GhepPhanTuNangCao(params string[][] args)
+        public static string[][] GhepPhanTuNangCao(params string[][] args)
         {
             // đầu vào là 1 mảng, trong mỗi phần tử là 1 mảng 1 chiều
             //vd: args=[ ["1","2"], ["a","b"], ["x","y","z"] ];
             //return [[ "1", "a","x" ], [ "1", "a","y" ] , [ "1", "a","z" ] , ... , , [ "2", "b","z" ]]
-
-            for (int i = 0; i < args.Length; i++)
+            int lenght = 0;
+            for(int i=0; i<args.GetLength(0); i++)
             {
-                for (int j = 0; j < args.Length; j++)
-                {
-                    if(args[i][j] != 0)
-                    {
-
-                    }
-                }
+                string[] itemLenght = args[i];
+                lenght *= itemLenght.Length;
             }
-            string[][] result = new string[][];
-        }*/
+            string[][] result = new string[lenght][];
+
+
+            for (int i=0; i<args.GetLength(0); i++)
+            {
+                string[] firstItem = args[i];
+                if (i > 0)
+                {
+                    result = GhepPhanTu(result, firstItem);
+                }
+                else
+                {
+                    string[] lastItem = args[i + 1];
+                    result = GhepPhanTu(firstItem,lastItem);
+                }
+                i++;
+            }
+            return result;
+        }
     }
 }
