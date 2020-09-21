@@ -38,39 +38,49 @@ namespace StringTest
             int hangChuc = number / 10;
             int hangDonVi = number % 10;
             if (hangChuc == 0 && hangDonVi > 0)
-                return " Le " + TextNumber(hangDonVi);
+                return "Le " + TextNumber(hangDonVi);
             else if (hangChuc == 0 && hangDonVi == 0)
                 return "";
-            else if (hangChuc == 1 && hangDonVi > 0)
-                return " Muoi " + TextNumber(hangDonVi);
+            else if (hangChuc == 1)
+                return (hangDonVi==0)? " Muoi " : " Muoi " + TextNumber(hangDonVi);
+            else if (hangChuc > 1)
+                return TextNumber(hangChuc) + " Muoi " + TextNumber(hangDonVi);
             else
                 return TextNumber(hangChuc) + " " + TextNumber(hangDonVi);
         }
         public string HangTram(int number)
         {
             int hangTram = number / 100;
-            return (hangTram == 0) ? " Khong Tram " + HangChuc(number % 100) : TextNumber(hangTram) + " Tram " + HangChuc(number % 100);
+            return TextNumber(hangTram) + " Tram " + HangChuc(number % 100);
         }
         public string HangNghin(int number)
         {
             int hangNghin = number / 1000;
-            return (hangNghin == 0) ? " Khong Nghin " + HangTram(number % 1000) : TextNumber(hangNghin) + " Nghin " + HangTram(number % 1000);
+            return TextNumber(hangNghin) + " Nghin " + HangTram(number % 1000);
         }
         public string HangChucNghin(int number)
         {
             int hangChucNghin = number / 10000;
-            return (hangChucNghin == 0) ? " Le " + HangNghin(number % 10000) : TextNumber(hangChucNghin) + " Muoi " + HangNghin(number % 10000);
+            if (hangChucNghin == 0)
+                return " Le " + HangNghin(number % 10000);
+            else if (hangChucNghin == 1)
+                return " Muoi " + HangNghin(number % 10000);
+            else
+                return TextNumber(hangChucNghin) + " Muoi " + HangNghin(number % 10000);
         }
         public string HangTramNghin(int number)
         {
             int hangTramNghin = number / 100000;
-            return (hangTramNghin == 0) ? " Khong Tram " + HangChucNghin(number % 100000) : TextNumber(hangTramNghin) + " Tram " + HangChucNghin(number % 100000);
+            return TextNumber(hangTramNghin) + " Tram " + HangChucNghin(number % 100000);
         }
         public string TextNumber(int number)
         {
             string result = "";
             switch (number)
             {
+                case 0:
+                    result = "Khong";
+                    break;
                 case 1:
                     result = "Mot";
                     break;

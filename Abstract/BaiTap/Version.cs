@@ -9,7 +9,7 @@ namespace StringTest
         private int numberOfVerSion;
         public int NumberOfVersion { get; set; }
 
-        public string ToString()
+        public override string ToString()
         {
             return "Hello " + NumberOfVersion;
         }

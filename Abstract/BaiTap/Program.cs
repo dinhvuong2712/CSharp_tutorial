@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 
 namespace StringTest
 {
@@ -40,9 +41,12 @@ namespace StringTest
 
             //TestVersion
 
-            TestVersion testVersion1 = new TestVersion();
-            testVersion1.NumberOfVersion = 1011;
-            Console.WriteLine(testVersion1.ToString());
+            foreach (var i in Enumerable.Range(0, 1500))
+            {
+                var v = new TestVersion { NumberOfVersion = i };
+                Console.WriteLine($"-----: {i} in VN string: {v}");
+                Console.WriteLine();
+            }
         }
 
         /*static string ThayDoiVersion(Version[] arrayVersion)
